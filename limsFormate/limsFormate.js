@@ -3,7 +3,8 @@ var path = require("path")
 var fileName = process.argv[2]
 var filePath = path.join(__dirname,`./tableHtml/${fileName}.html`)
 
-var data = require("./01.js")
+// var originFile = process.argv[2]
+var data = require("./originFile.js")
 var reg = /style="[^\"]*?"/g
 var reg2 = /<\s*span\s*><o:p>(.*?)<\/o:p><\/\s*span\s*>/g
 
@@ -19,5 +20,3 @@ fs.writeFile(filePath,str2,(err,res)=>{
 		console.log("写入成功")
 	}
 })
-
-// console.log("a",a)
